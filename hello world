@@ -1,0 +1,3 @@
+#헬로우 월드
+a='hello world'
+print(a)

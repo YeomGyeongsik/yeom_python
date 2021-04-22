@@ -1,19 +1,22 @@
- fname = "galaxy.jpg"
-    = cv2.imread(fname, 0) # 0: gray; 1, RGB; -1: transparency
+# 3week Homework - Load Photo Files
+
+import cv2 
+import glob
+
+for image in glob.glob('*.jpg') 
+    
+    fname = image  
     img_color = cv2.imread(fname, 1)
-
-    h_new = img_gray.shape[0]//2 # 1000
-    w_new = img_gray.shape[1]//2 # 500
-    img_gnew = cv2.resize(img_gray, (w_new, h_new))
-    img_cnew = cv2.resize(img_color, (w_new, h_new))
-
-    # cv2.imshow('Gray', img_gray)
-    # cv2.imshow('Color', img_color)
+   
+    
+    img_gnew = cv2.resize(img_gray, (300, 300))
+    img_cnew = cv2.resize(img_color, (300, 300))
+ 
     cv2.imshow('Gray', img_gnew)
     cv2.imshow('Color', img_cnew)
-
-    fname_new = "galaxy_resized.jpg"
+   
+    fname_new = image + "_resized.jpg" 
     cv2.imwrite(fname_new, img_cnew)
-    cv2.waitKey(0) # 0: press button; 2000: 2 seconds
+    cv2.waitKey(2000) 
     cv2.destroyAllWindows()
-
+   
